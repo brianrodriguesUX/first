@@ -37,13 +37,16 @@ body * {
   color: var(--primary-text-color);
 }
 
-/* Avatar */
+/* full content */
 #page-container {
-  width: 360px;
+  width: 100%;
   margin: 56px auto 0px;
   display: flex;
   flex-direction: column;
+  max-width: 588px;
+  min-width: none;  
 }
+/* Avatar */
 #user-avatar {
   display: flex;
   align-items: center;
