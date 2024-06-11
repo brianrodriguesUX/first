@@ -1,0 +1,156 @@
+/*Global Configs*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Variables*/
+:root {
+  /*dark-theme*/
+  --primary-text-color: white;
+  --text-color-link: rgb(85, 159, 255);
+  --border-color-hovered: rgba(255, 255, 255, 0.5);
+  --neutral-background: rgba(255, 255, 255, 0.1);
+  --neutral-background-hovered: rgba(255, 255, 255, 0.05);
+  --bg-url: url(/assets/bg-mobile.jpg);
+  --switch-icon-url: url(/assets/sun.svg);
+}
+
+.light {
+  /*light-theme*/
+  --primary-text-color: rgb(12, 0, 65);
+  --text-color-link: blue;
+  --border-color-hovered: rgba(25, 24, 71, 0.5);
+  --neutral-background: rgba(118, 113, 136, 0.1);
+  --neutral-background-hovered: rgba(209, 209, 209, 0.05);
+  --bg-url: url(/assets/bg-mobile-light.jpg);
+  --switch-icon-url: url(/assets/moon-stars.svg);
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--primary-text-color);
+}
+
+/* Avatar */
+#page-container {
+  width: 360px;
+  margin: 56px auto 0px;
+  display: flex;
+  flex-direction: column;
+}
+#user-avatar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+#user-avatar img {
+  width: 112px;
+}
+#user-avatar p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Switch Button */
+#switchbutton {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switchbutton button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: white var(--switch-icon-url) no-repeat center;
+
+  /*transform*/
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.light #switchbutton button {
+  right: 0;
+  left: initial;
+}
+
+#switchbutton span {
+  width: 64px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color-hovered);
+  background: var(--neutral-background);
+  backdrop-filter: blur(4px);
+}
+
+/* Buttons list */
+ul {
+  list-style: none;
+  flex-direction: column;
+  display: flex;
+  gap: 12px;
+  padding: 24px;
+}
+ul li a {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: var(--neutral-background);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.5s;
+}
+ul li a:hover {
+  background-color: var(--neutral-background-hovered);
+  border: 1px solid var(--border-color-hovered);
+  backdrop-filter: blur(56px);
+}
+
+/* Social Icons */
+#social-links {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  font-size: 24px;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s;
+  padding: 16px;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background-color: var(--neutral-background-hovered);
+  border: 1px solid var(--border-color-hovered);
+  backdrop-filter: blur(56px);
+}
+
+/* Made by */
+footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 24px;
+}
+footer a {
+  color: var(--text-color-link);
+}
